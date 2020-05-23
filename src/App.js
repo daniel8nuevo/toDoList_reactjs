@@ -19,6 +19,10 @@ export default class ToDoApp extends React.Component {
   }
   handleSubmit = e => {
     e.preventDefault();
+
+    if ( this.state.inputValue.length === 0 ) {
+      return;
+    }    
     
     const randNumber = Math.floor(Math.random() * 9999);
 

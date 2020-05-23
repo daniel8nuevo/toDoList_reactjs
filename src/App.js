@@ -6,7 +6,7 @@ export default class ToDoApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputValue : null,
+      inputValue : "",
       todo: []
     }
     this.handleChange = this.handleChange.bind(this);
@@ -29,7 +29,7 @@ export default class ToDoApp extends React.Component {
 
     this.setState( state => ({
       todo:[...this.state.todo, newToDo],
-      inputValue: null
+      inputValue: ""
     }));
   }
   render(){

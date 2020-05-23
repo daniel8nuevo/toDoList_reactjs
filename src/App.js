@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import ToDoList from './ToDoList';
 
 export default class ToDoApp extends React.Component {
   constructor(props) {
@@ -27,15 +28,23 @@ export default class ToDoApp extends React.Component {
     }
 
     this.setState( state => ({
-      todo:[...this.state.todo, newToDo]
+      todo:[...this.state.todo, newToDo],
+      inputValue: null
     }));
   }
   render(){
     return(
       <div>
         <h1>TO DO APP</h1>
+          <ToDoList todo={this.state.todo} />
           <form onSubmit={this.handleSubmit}>
-
+            <label htmlFor="newToDo">Please, add a new task!</label>
+              <input
+                id="newToDo"
+                onChange={this.handleChange}
+                value={this.state.inputValue}
+              />
+              <button>ADD</button>
           </form>
       </div>
     )

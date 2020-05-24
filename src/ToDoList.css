@@ -1,0 +1,10 @@
+.todoBox{
+    color: #FFFFFF;
+    width: 100px;
+    padding: 5px;
+    background-color: #FAAF18;
+    margin: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}

@@ -7,7 +7,7 @@ export default class ToDoList extends React.Component {
             <div>
                 <ol>
                     {this.props.todo.map(todos => (
-                        <li key={todos.id}>
+                        <li className='todoBox' key={todos.id}>
                             {todos.inputValue}
                         </li>
                     ))}

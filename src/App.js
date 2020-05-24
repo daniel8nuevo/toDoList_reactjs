@@ -39,16 +39,17 @@ export default class ToDoApp extends React.Component {
   render(){
     return(
       <div>
-        <h1>TO DO APP</h1>
+        <h1 className='header'>TO DO APP</h1>
           <ToDoList todo={this.state.todo} />
           <form onSubmit={this.handleSubmit}>
-            <label htmlFor="newToDo">Please, add a new task!</label>
+            <label htmlFor="newToDo">PLEASE, ADD A NEW TASK!</label>
               <input
+                className='inputValue'
                 id="newToDo"
                 onChange={this.handleChange}
                 value={this.state.inputValue}
               />
-              <button>ADD</button>
+              <button className='buttonAdd'>ADD</button>
           </form>
       </div>
     )

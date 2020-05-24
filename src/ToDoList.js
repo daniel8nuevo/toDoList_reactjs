@@ -11,7 +11,7 @@ export default class ToDoList extends React.Component {
                         <div >
                             <li className='todoBox' key={todos.id}
                             onClick={() => {this.props.deleteTodo(todos.id)}}>
-                                {todos.inputValue}
+                                {todos.inputValue.toUpperCase()}
                             </li>
                         </div>
                     ))}

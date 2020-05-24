@@ -11,6 +11,7 @@ export default class ToDoApp extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.deleteTodo = this.deleteTodo.bind(this);
   }
   handleChange = e => {
     this.setState({
@@ -20,7 +21,7 @@ export default class ToDoApp extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    if ( this.state.inputValue.length === 0 ) {
+    if ( this.state.inputValue.length === 0){
       return;
     }    
     
@@ -36,11 +37,21 @@ export default class ToDoApp extends React.Component {
       inputValue: ""
     }));
   }
+
+  deleteTodo = id => {
+    const todo = this.state.todo.filter( todo => {
+      return todo.id !== id
+    });
+    this.setState({
+      todo: todo
+    })
+  }
+
   render(){
     return(
       <div>
         <h1 className='header'>TO DO APP</h1>
-          <ToDoList todo={this.state.todo} />
+          <ToDoList todo={this.state.todo} deleteTodo={this.deleteTodo} />
           <form onSubmit={this.handleSubmit}>
             <label htmlFor="newToDo">PLEASE, ADD A NEW TASK!</label>
               <input
